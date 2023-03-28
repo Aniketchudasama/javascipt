@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .error {
+        background-color: rgb(255, 240, 242);
+        border: 2px solid red;
+      }
+      .noError
+      {
+        background-color: white;
+            border: 1px solid black;
+            font-size: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Register form</h1>
+    <hr />
+    <form action="leseen11.html" onsubmit="return ValidateForm(); X">
+
+        <table align="center" border="2" cellpadding="10" width="70%">
+            <tr>
+        <td>enter your name</td>
+        <td>
+          <input type="text" id="username" class="myInputs"/>
+        </td>
+        <td width="33%" id="td-username" class="noError">
+          usermane cen not be blnck
+        </td>
+      </tr>
+      <tr>
+        <td>enter pincode</td>
+        <td>
+          <input type="number" id="pincode"   class="myInputs"/>
+        </td>
+        <td id="td-pincode" class="noError">
+            pincode cen not be blnck
+        </td>
+      </tr>
+      <tr>
+        <td>enter your birth </td>
+        <td>
+          <input type="date" id="dob"  class="myInputs" />
+        </td>
+        <td id="td-dob"  class="noError">
+            birth  cen not be blnck
+        </td>
+    </tr>
+    <tr>
+        <td  colspan="3" align="center">
+            <input  type="submit" value="Register" />
+        </td>
+    </tr>
+</table>
+</form>
+    <script>
+
+function isNumeric(n) {
+            return !isNaN(parseFloat(n)) && isFinite(n);
+        }
+        function isString(s)
+        {
+            return /^[a-zA-Z]+$/.test(s);
+        }
+
+
+      function CheckInput(id) {
+
+var ErrorTd="td-"+document.getElementById(this.id).id;
+var inputType =document.getElementById(this.id).type;
+var inputValue =document.getElementById(this.id).value;
+console.log(ErrorTd)
+
+if(inputValue!="")
+        {
+           document.getElementById(ErrorTd).className="noError"
+
+        }
+        else
+        {
+
+            document.getElementById(ErrorTd).className="error"
+        }
+      }
+        if(inputType=="text" && !isString(inputValue))
+        {
+           alert("only letters allowed" );
+
+        }
+        else if (inputType=="number" && !isString(inputValue))
+        {
+
+            alert("only digits allowed");
+        }
+      
+        var inputs = document.getElementsByClassName("myInputs");
+        for (let index = 0; index < inputs.length; index++) {
+            inputs[index].onblur = CheckInput;
+        }
+      
+    </script>
+  </body>
+</html>

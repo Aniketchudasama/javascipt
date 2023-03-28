@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        
+        third method to crieat object 
+    </h1>
+    <script>
+        function Produced (name,price,quantity)
+        {
+        
+            this.name=name;
+            this.price=price;
+            this.quantity=quantity;
+            this.display=function()
+
+            {
+                console.log('name',this.name);
+                console.log('prise',this.price);
+                console.log('quantity',this.quantity);
+            }
+
+        }
+        var p1 = new Produced ('oppof15',18000,1);
+        p1.display();
+    </script>
+</body>
+</html>

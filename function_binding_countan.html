@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>function_binding</title>
+  </head>
+  <body>
+    <h1>function_binding</h1>
+    <hr />
+    <p id="output" style="font-size: 2rem"></p>
+    <script>
+        let calculator= {
+
+            num1:10,
+            num2:20,
+            
+            add : function(){
+                console.log(this.num1,this.num2)
+                let result = (this.num1+this.num2)
+               document.getElementById('output').innerHTML= ' addition = '+result;
+            },
+            sub:function()
+            {
+                console.log(this.num1,this.num2);
+                let result = this.num1 - this.num2;
+                document.getElementById("output").innerHTML += "<br/>substraction = " + result;
+            }
+         
+        }
+
+        console.log(calculator.add())
+        console.log(calculator.sub())
+        
+ 
+        let addition = calculator.add.bind(calculator)
+        let subtraction= calculator.sub.bind(calculator)
+
+        addition()
+        subtraction()
+        subtraction()
+
+
+
+        
+
+    </script>
+  </body>
+</html>

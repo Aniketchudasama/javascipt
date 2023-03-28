@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        How to create duplicate object (Object Clone)
+    </h1>
+    <hr>
+    <script>
+        let person={
+            name : "aniket",
+            height: 40,
+            city :"bhavnager"
+        }
+        let another_person ={}
+
+        console.log(person)
+        console.log(another_person)
+
+        for (let property in person)
+        {
+            (another_person[property]= person[property])
+        }
+        another_person.name=" jignesh chudasama"
+        another_person.age=16
+
+        console.log(person)
+        console.log(another_person)
+    </script>
+</body>
+</html>

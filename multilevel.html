@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>
+        multilevel inheritance
+    </h1>
+    <script>
+        class person
+        {
+            walk()
+            {
+                console.log('i can walk');
+            }
+
+            talk()
+            {
+                console.log('i can talk');
+            }
+        }
+
+        class student extends person
+        {
+
+            read()
+            {
+                console.log('i can read');
+            }
+
+            write()
+            {
+                console.log('i can write');
+            }
+        }
+
+        class developer extends student
+
+        {
+
+            code()
+            {
+                console.log(' i can code right now');
+            }
+
+             ccc()
+             {
+                console.log('i can start ccc cores');
+             }
+
+             brother()
+             {
+                super.walk();
+                super.talk();
+                super.read();
+                super.write();
+                this.code();
+                this.ccc();
+             }
+        }
+
+        var d1 = new developer();
+        d1.brother();
+
+    </script>
+</body>
+</html>

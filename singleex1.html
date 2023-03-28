@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>real life inheritance</title>
+</head>
+<body>
+    <h1>
+        ex 1 singellevel inheritance
+    </h1>
+</body>
+<script>
+    class foot
+    {
+        constructor(inches)
+        {
+            this.inches=parseInt(inches);
+            console.log ('foot class called constructor');
+
+        }
+        getfoot()
+        {
+           return this.inches/12;
+
+        }
+    }
+
+    class miter extends foot
+    {
+        constructor(inches)
+       {
+        super(inches)
+    console.log("miter class constructor called........");
+
+       }
+       getmiter()
+       {
+        return (super.getfoot()/3.281).toFixed(2)
+       }
+    }
+    var inches = prompt("enter inches",0);
+    var f1 = new foot (inches);
+
+    var result = f1.getfoot();
+    console.log('foot ',result)
+
+    var m1 = new miter(inches);
+    var result = m1.getmiter();
+    console.log('miter ',result)
+
+</script>
+</html>

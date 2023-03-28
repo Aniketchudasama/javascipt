@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cookies 2</title>
+  </head>
+  <body>
+    <h1>working with cookies real life ex.</h1>
+    <hr />
+
+    <form action="">
+      <table align="center" cellpadding="20px" width="50%" border="2">
+
+        <tr>
+          <td colspan="2" align="center">
+            <input type="button" value="open google" id="btnopen" /> 
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script src="cookies.js"></script>
+    <script>
+        var google= document.getElementById("btnopen");
+
+
+         google.addEventListener("click",function(){
+            window.location="https://www.google.com/"
+         })
+       
+    </script>
+  </body>
+</html>

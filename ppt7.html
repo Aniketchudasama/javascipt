@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+  <h1>
+         inner HTML in java script
+
+</h1>  
+
+
+<table align="center" border="1" cellpadding="10px">
+        <tr>
+            <td colspan="2">
+                <h2 align="center">
+
+                    calculator
+                </h2>
+            </td>
+            <tr>
+                <td>
+                    enter frist number
+                </td>
+                <td>
+                    <input type="number" id="first">
+                </td>
+            </tr>
+                <tr>
+                    
+                <td>
+                    enter secund number
+                </td>
+                <td>
+                    <input type="number" id="secund">
+                </td>
+            </tr>
+            <tr>
+                <td  colspan="2">
+                    <h3 align="center">
+
+                        <input  type="button" value="calculator" id="calculator" onclick="CalculateArea()" >
+                    </h3>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h2 align="center" id="output">
+                        output ansre
+                    </h2>
+                </td>
+            </tr>
+
+        </tr>
+    </table>
+
+    <script>
+        var calculator =document.getElementById("calculator")
+        var first = document.getElementById("first")
+        var secund= document.getElementById("secund")
+        var output = document.getElementById("output")
+        console.log('all variable')
+       
+       var isValidInput = function()
+       {
+         if ((first.value==""))
+         {
+            alert ('first value can  blank')
+            return false
+         }
+
+         else if ((secund.value == ""))
+         {
+            alert('secund value can not blank')
+            return false
+         }
+
+         else
+         {
+            return true
+         }
+       }
+
+       console.log('all variable')
+
+
+
+       var getArea = function(){
+
+        let area = parseInt(first.value)*parseInt(secund.value)
+        console.log(area)
+        return area
+       }
+       console.log('all variable')
+
+
+       var CalculateArea = function ()
+         {
+             var isValid = isValidInput();
+            if(isValid==true)
+            {
+                let area = getArea();
+                output.innerHTML= area;
+            }
+
+        }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cookies 2</title>
+  </head>
+  <body>
+    <h1>working with cookies real life ex.</h1>
+    <hr />
+
+    <form action="">
+      <table align="center" cellpadding="20px" width="50%" border="2">
+        <tr>
+          <td>enter cookies name</td>
+          <td>
+            <input type="text" id="cookiesName" />
+          </td>
+        </tr>
+        <tr>
+          <td>enter cookies value</td>
+          <td>
+            <input type="text" id="cookiesValue" />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="button" value="create cookies" id="create" />
+            <input type="button" value="getCookie" id="get" />
+            <input type="button" value="delete cookies " id="delete" />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <script src="cookies.js"></script>
+    <script>
+        var create = document.getElementById("create");
+        var get = document.getElementById("get");
+        var btndelete = document.getElementById("delete");
+        var cookiesName = document.getElementById("cookiesName");
+        var cookiesValue = document.getElementById("cookiesValue");
+
+
+        create.addEventListener( "click",function(){
+            setCookie(cookiesName.value,cookiesValue.value)
+            cookiesName.value=""
+            cookiesValue.value=""
+        })
+
+        get.addEventListener("click",function(){
+            var  response = getCookie(cookiesName.value)
+            cookiesValue.value=response
+        })
+
+        btndelete.addEventListener("click",function(){
+          setCookie(cookiesName.value,'',-2)
+          cookiesName.value="";
+        })
+    </script>
+  </body>
+</html>

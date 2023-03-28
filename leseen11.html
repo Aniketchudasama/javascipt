@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <span>
+      <h1>area calculator</h1>
+      <hr />
+    </span>
+
+    <table align="center" cellpadding="10px">
+      <tr>
+        <td>enter width</td>
+        <td>
+          <input type="number" id="width" />
+        </td>
+      </tr>
+      <tr>
+        <td>enter length</td>
+        <td>
+          <input type="number" id="length" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="button" id="btnclaculetor" value="calculator" onclick="CalculateArea();" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center" id="output">output</td>
+      </tr>
+      <script>
+        var btnclaculetor = document.getElementById("btnclaculetor");
+        var length = document.getElementById("length");
+        var width = document.getElementById("width");
+        var output = document.getElementById("output");
+        console.log("all variables are created");
+
+        var isValidInput = function () {
+          if ((length.value == "")) {
+            alert("length can not be blank");
+            return false;
+          } else if ((width.value == "")) {
+            alert("width can not be blank");
+            return false;
+          } else {
+            return true;
+          }
+        };
+        var getArea = function () {
+          let area = parseInt(length.value) * parseInt(width.value);
+          console.log(area);
+          return area;
+        };
+
+        var CalculateArea = function ()
+         {
+             var isValid = isValidInput();
+            if(isValid==true)
+            {
+                let area = getArea();
+                output.innerHTML= area;
+            }
+
+        }
+      </script>
+    </table>
+  </body>
+</html>

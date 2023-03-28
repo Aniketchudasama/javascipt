@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array mep functions</title>
+  </head>
+  <body>
+    <h1>array mep function</h1>
+    <hr />
+    <p id="output" style="margin-left: 50px; font-size: 30px"></p>
+    <script>
+      let countries = ["INDIA", "RUSSIA", "CANADA", "BRAZIL", "US"];
+      console.log(countries);
+      let all_countries = countries.map(function (country) {
+        return country.toLocaleLowerCase(); //ues for dision
+      });
+      console.log(all_countries);
+
+      let books = [
+        { name: "one", price: 100, author: "ABC" },
+        { name: "tow", price: 200, author: "XYZ" },
+        { name: "their", price: 300, author: "PQR" },
+      ];
+
+      let filter_books = books.map(function (book) {
+        if (book.author == "ABC") return book;
+      });
+      console.log(filter_books);
+
+      filter_books = filter_books.filter(function (book) {
+        return book;
+      });
+      console.log(filter_books);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .error {
+        background-color: rgb(255, 240, 242);
+        border: 2px solid red;
+      }
+      .noError
+      {
+        background-color: white;
+            border: 1px solid black;
+            font-size: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>interest calculator</h1>
+    <hr />
+    <form action="leseen11.html" onsubmit="return ValidateForm();">
+
+        <table align="center" border="2">
+            <tr>
+        <td>enter amount</td>
+        <td>
+          <input type="number" id="amount" onblur="CheckInput(this.id);" />
+        </td>
+        <td width="33%" id="td-amount" class="noError">
+            amount cen not be blnck
+        </td>
+      </tr>
+      <tr>
+        <td>enter rate</td>
+        <td>
+          <input type="number" id="rate"   onblur="CheckInput(this.id);"/>
+        </td>
+        <td id="td-rate" class="noError">
+            rate cen not be blnck
+        </td>
+      </tr>
+      <tr>
+        <td>enter year</td>
+        <td>
+          <input type="number" id="year"  onblur="CheckInput(this.id);" />
+        </td>
+        <td id="td-year"  class="noError">
+            year cen not be blnck
+        </td>
+    </tr>
+    <tr>
+        <td  colspan="3" align="center">
+            <input  type="submit" value="Calculate Interest" />
+        </td>
+    </tr>
+</table>
+</form>
+    <script>
+      function CheckInput(id) {
+
+var ErrorTd="td-"+document.getElementById(this.id).id;
+console.log(ErrorTd)
+
+        if(document.getElementById(this.id).value!='')
+        {
+           document.getElementById(ErrorTd).className="noError"
+
+        }
+        else
+        {
+
+            document.getElementById(ErrorTd).className="error"
+        }
+      }
+
+      var amount = document.querySelector("#amount");
+        var rate = document.querySelector("#rate");
+        var year = document.querySelector("#year");
+        amount.onblur = CheckInput;
+        rate.onblur = CheckInput;
+        year.onblur = CheckInput;
+
+      function ValidateForm() {
+
+        
+        var amount = document.getElementById('amount');
+        var rate = document.getElementById('rate');
+        var year = document.getElementById('year');
+
+        if (amount == "") {
+          alert("amount can be not blank");
+          amount.focus();
+          amount.className = "error";
+          return;
+        }
+
+        if (rate == "") {
+          alert("amount can be not blank");
+          rate.focus();
+          rate.className = "error";
+        }
+        if (year == "") {
+          alert("amount can be not blank");
+          year.focus();
+          year.className = "error";
+        } else {
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>

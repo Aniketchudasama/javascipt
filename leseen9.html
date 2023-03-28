@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>area calculater</h1>
+    <form action="" method="post">
+        <table align="center" border="2" cellpadding="10">
+            <tr>
+                <td>
+                    entre lenght
+                </td>
+                <td>
+                    <input type="number" id="lenght" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    enter width 
+                </td>
+                <td>
+                    <input type="number" id="width">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="ansre"  id="anser" onclick="areaAnsre">
+                </td>
+            </tr>
+            <tr>
+                <td id="output" colspan="2" align="centre">
+                    
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        var lenght=document.getElementById("lenght")
+        var width=document.getElementById("width")
+        var anser=document.getElementById("anser")
+        var output=document.getElementById("output")
+
+        function areaAnsre()
+        {
+            if(lenght.value=="")
+            {
+                alert("it is blcnk")
+            }
+            else if(width.value=="")
+            {
+                alert("it is blcnk ")
+            }
+            else
+            {
+              var area= parseInt("langht.value") * parseInt ("width.value")
+              console.log(area)
+              output.innerHTML=area;0
+            }
+        }
+    </script>
+
+</body>
+</html>

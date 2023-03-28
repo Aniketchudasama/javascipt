@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>empty_object_with_property_exists_or_not.html</title>
+</head>
+<body>
+    <h1>
+        empty object 
+    </h1>
+    <hr>
+    <script>
+        var course = {}; //first method to criaet object // empty object
+
+        var exam = new Object (); //secund  method to criaet object // empty object
+
+        console.log(course);
+        console.log(exam);
+        course.name = " php";
+        exam.scc= 120;
+        console.log(course)
+
+        if (course.name === undefined)
+         {
+            console.log('course has no property') 
+         }
+         else
+         {
+            console.log(course.name)
+         }
+           if (exam.scc === undefined)
+         {
+            console.log('exam has no property') 
+         }
+         else
+         {
+            console.log(exam.scc)
+         }
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex for arrey map function</title>
+    <style>
+      #shop {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      #shop > div {
+        width: 30%;
+        border: solid 1px black;
+        background-color: rgb(197, 77, 77);
+        margin-bottom: 20px;
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ex for arrey map function</h1>
+
+    <table>
+      <tr>
+        <td>
+          <input type="text" id="marvelprice" placeholder="bookprice" />
+        </td>
+        <td>
+          <input type="text" id="marvelauthor" placeholder="bookauthor" />
+        </td>
+        <td>
+          <input type="button" value="search" id="btnsearch" />
+        </td>
+      </tr>
+    </table>
+
+    <div id="shop"></div>
+    <script>
+      let marvels = [
+        { name: "thor", price: 500, author: "mcu" },
+        { name: "thor", price: 500, author: "mcu" },
+        { name: "thor", price: 500, author: "mcu" },
+        { name: "thor", price: 500, author: "mcu" },
+        { name: "thor", price: 500, author: "mcu" },
+        { name: "bed", price: 100, author: "dc" },
+        { name: "bed", price: 100, author: "dc" },
+        { name: "bed", price: 100, author: "dc" },
+        { name: "bed", price: 100, author: "dc" },
+        { name: "bed", price: 100, author: "dc" },
+        { name: "boll", price: 50, author: "bollywood" },
+        { name: "boll", price: 50, author: "bollywood" },
+      ];
+
+      function DisplayMarvel(marvelList) {
+        document.getElementById("shop").innerHTML = "";
+        marvelList.forEach(function (marvel) {
+          document.getElementById(
+            "shop"
+          ).innerHTML += `<div><p>${marvel.name}</p><p>${marvel.price}</p><p>${marvel.author}</p></div>`;
+        });
+      }
+
+      DisplayMarvel(marvels);
+
+      var marvelprice = document.getElementById("marvelprice");
+      var marvelauthor = document.getElementById("marvelauthor");
+      var btnsearch = document.getElementById("btnsearch");
+      btnsearch.addEventListener("click", function () {
+        var marvels_filter = marvels.map(function (marvel) {
+          var tamp = null;
+          if (marvelprice.value != "" && marvelauthor.value != "") {
+            if (
+              marvelprice == marvelprice.value &&
+              marvelauthor == marvelauthor.value
+            )
+              tamp = marvel;
+          } else if (marvelprice.value != "") {
+            if (marvelprice == marvelprice) tamp = marvel;
+          } else if (marvelauthor.value != "") {
+            if (marvelauthor == marvelauthor.value) tamp = marvel;
+          }
+          return marvel;
+        });
+
+        marvels_filter = marvels_filter.filter(function (marvel) {
+          return marvel;
+        });
+        DisplayMarvel = marvels_filter;
+      });
+    </script>
+  </body>
+</html>

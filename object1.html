@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>1st method to crieat object</h1>
+    <script>
+      var person = {
+        name: "aniket chudasama",
+        age: 19,
+        gander: true,
+        weigth: 50.32,
+      };
+
+      console.log("displaying person", person);
+
+      // accessing properties
+
+      console.log("name", person.name);
+      console.log("age", person.age);
+      console.log("gander", person.gander);
+      console.log("wieght", person.weigth);
+
+      // change value properties
+
+      person.age = 29;
+
+      // add properties
+
+      person.email = "chudasamaaniket@gmail.com";
+      person["country"] = "indea";
+
+      console.log("SECUND TECHNIQUE");
+      console.log("name", person["name"]);
+      console.log("age", person["age"]);
+      console.log("gander", person["gander"]);
+      console.log("wieght", person["weight"]);
+      console.log("wieght", person["country"]);
+      console.log("wieght", person["email"]);
+    </script>
+  </body>
+</html>

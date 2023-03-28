@@ -1,0 +1,22 @@
+.console
+  for a message print
+console.log( "this is log message" ); //printf
+
+        console.warn( "this is worning message" ); //printf
+
+        console.error( "this is error message" ); //printf
+
+        console.info( "this is info message" ); //printf
+
+        console.debug( "this is debug message" ); //printf
+
+-------------------------------------------------------------------------------------------------        
+ "use strict"
+
+    pi=3.14;
+    console.log(pi);
+
+----------------------------------------------------------------------------------------------------------------
+defaultvalue
+
+defaultvalue = "your name here"-------------name no apiyu hoyto
